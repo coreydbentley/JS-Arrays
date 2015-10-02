@@ -159,7 +159,25 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   myGroceryList then return the new, updated grocery list.
 */
 
-  //Code Here
+
+  function removeItem(groceryList, item){
+    for(i=groceryList.length - 1; i >= 0; i--){
+      if(( item === groceryList[i]) === true){
+        groceryList.splice(i, 1);
+      }
+    }
+    return groceryList;
+  }
+
+  function addItem(groceryList, item){
+    for(i=groceryList.length - 1; i >= 0; i--){
+      if(( item === groceryList[i]) === true){
+        return groceryList;
+      } 
+    }
+    groceryList.push(item);
+    return groceryList;
+  }
 
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
