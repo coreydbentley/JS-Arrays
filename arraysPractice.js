@@ -104,9 +104,22 @@ var getRandomArbitrary = function() {
   return Math.floor(Math.random() * (30 - 0) + 0);
 };
 var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
-//Above you're given a function that will return a random number between 0 and 30, and an array full of numbers. Your job is to write a function named finder that will get a random number, then loop through the array to see if that random number is in the array. If it is, return true, if it's not, return false
+//Above you're given a function that will return a random number between 0 and 30, 
+//and an array full of numbers. Your job is to write a function named finder 
+//that will get a random number, then loop through the array to see if that 
+//random number is in the array. If it is, return true, if it's not, return false
 
-  //Code Here
+  function inArray(arr){
+    var value = getRandomArbitrary();
+    console.log(value);
+    for(i=0; i < arr.length; i++){
+      if((value === arr[i]) === true){
+        return true;
+        break;
+      }
+    }
+    return false;
+  }
 
 
 //Next problem
@@ -114,9 +127,12 @@ var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 
 
 var str = 'this is my sentence';
-//Write a function called reverse that takes a given str as it's only argument and returns that string after it's been reversed
+//Write a function called reverse that takes a given str as it's only argument
+// and returns that string after it's been reversed
 
-  //Code Here
+  function reverse(passedString){
+    return passedString.split('').reverse().join('');
+  }
 
 
 //Next Problem
@@ -124,15 +140,22 @@ var str = 'this is my sentence';
 
 var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 /*
-  Here we're going to write a function that mimics going shopping and checking things off of our grocery list,
+  Here we're going to write a function that mimics going shopping and checking 
+  things off of our grocery list,
   and adding new items to our list. 
   
-  Write a function called removeItem that is given two arguments, the first is myGroceryList, and the
-  second is an item to remove from myGroceryList. If the second argument (or the item to add or remove) matches an item in myGroceryList,
-  remove that item from the your grocery list and return the new, updated grocery list. 
+  Write a function called removeItem that is given two arguments, the first is
+   myGroceryList, and the
+  second is an item to remove from myGroceryList.
+   If the second argument (or the item to add or remove) 
+   matches an item in myGroceryList,
+  remove that item from the your grocery list and return the new, 
+  updated grocery list. 
   
-  Once you do that, write another function called addItem that is given two arguments, the first is myGroceryList
-  and the second is an item to add to your grocery list. In addItem add the item you passed in to
+  Once you do that, write another function called addItem that is given two arguments, 
+  the first is myGroceryList
+  and the second is an item to add to your grocery list.
+   In addItem add the item you passed in to
   myGroceryList then return the new, updated grocery list.
 */
 
