@@ -188,9 +188,16 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 
 
-//Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
+//Write a function called maker that creates an array, 
+//fills that array with numbers from 1 to 215, then returns the array.
 
-  //Code Here
+ function maker(){
+  var newArray = [];
+  for(i=1; i <= 215; i++){
+    newArray.push(i);
+  }
+  return newArray;
+ }
 
 
 
@@ -199,9 +206,23 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 var numbers = [5, '9', 16, 19, '25', '34', 48];
 //Write a function called addTen that is given 'numbers' as it's only argument and returns a new
-//array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
+//array after adding ten to each item in numbers. 
+//*Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
-  //Code Here
+  function addTen(numberArray){
+    var newArray = [];
+    for(i=0; i < numberArray.length; i++){
+       if(typeof(numberArray[i]) === 'number'){
+          newArray.push(numberArray[i]);
+       } else if(typeof(numberArray[i]) === 'string'){
+          newArray.push(Number(numberArray[i]));
+       } else {
+         return 'Input not valid';
+         break;
+       }
+    }
+    return newArray;
+  }
 
 
 
@@ -222,7 +243,15 @@ for(var i = 0; i < num2; i++){
 //Above is some code that adds a random number of values to both arr1 and arr2.
 //Write a function that is given arr1 and arr2 as it's only arguments. Return the array which is longest.
 
-  //Code Here
+  function theLongest(arr1, arr2){
+    if(arr1.length === arr2.length){
+      return 'The arrays are the same size';
+    } else if (arr1.length > arr2.length){
+      return arr1;
+    } else {
+      return arr2;
+    }
+  }
 
 
 /*As a continuation of the previous problem, write another function called 'both'.
@@ -230,7 +259,21 @@ for(var i = 0; i < num2; i++){
   'both' should return a new array full of numbers that are found in both arr1 and arr2.
 */
 
-  //Code Here
+  function both(arr1, arr2){
+      var bothArray = [];
+      for(i=0; i < arr1.length; i++){
+          for(j=0; j < arr2.length; j++)
+          {
+            if( arr1[i] === arr2[j]){
+                bothArray.push(arr1[i]);
+            }
+
+          }
+      }
+      return bothArray;
+  }
+
+  
   
   
   
@@ -270,12 +313,17 @@ var colt = {
 array with those four objects. After that console.log the length of the Array and make
 sure that it's equal to 4. */
 
-  //Code Here
+  devMountainEmployees.push(tyler, cahlan, ryan, colt);
+  console.log(devMountainEmployees.length);
 
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
-  //Code Here
+  for(i=0; i < devMountainEmployees.length; i++){
+    if( devMountainEmployees[i].name === 'Cahlan'){
+        devMountainEmployees.splice(i, 1);
+    }
+  }
 
 
 
